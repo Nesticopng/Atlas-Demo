@@ -6,7 +6,7 @@ const API_KEY = process.env.API_KEY
 var requestOptions = {
     method: 'GET',
     redirect: 'follow',
-    headers: {"apikey", API_KEY}
+    headers: {apikey: API_KEY}
 }
 
 const today = new Date()
