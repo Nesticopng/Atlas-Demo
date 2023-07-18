@@ -7,7 +7,7 @@ var requestOptions = {
     method: 'GET',
     headers:{
     'apikey': API_KEY
-  },
+    },
     redirect: 'follow'
 }
 
