@@ -1,9 +1,11 @@
-require('dotenv').config();
+require('dotenv').config()
 
 const indexCtrl = {}
 const API_KEY = process.env.API_KEY
 
-var myHeaders = new Headers()
+const fetch = require('node-fetch')
+
+var myHeaders = new fetch.Headers()
 myHeaders.append("apikey", API_KEY)
 
 var requestOptions = {
@@ -29,7 +31,7 @@ indexCtrl.renderIndex = (req, res) =>{
 }
 
 indexCtrl.renderLogin = (req, res) => {
-    res.render("./Login")
+    res.render(".Login")
 }
 
 indexCtrl.renderApp = (req, res) => {
