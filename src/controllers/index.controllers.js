@@ -3,9 +3,9 @@ require('dotenv').config()
 const indexCtrl = {}
 const API_KEY = process.env.API_KEY
 
-const fetch = require('node-fetch')
+const { Headers } = require('node-fetch')
 
-var myHeaders = new fetch.Headers()
+var myHeaders = new Headers()
 myHeaders.append("apikey", API_KEY)
 
 var requestOptions = {
