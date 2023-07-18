@@ -1,4 +1,5 @@
 require('dotenv').config()
+const API_KEY = process.env.API_KEY
 
 const indexCtrl = {}
 
@@ -36,8 +37,7 @@ indexCtrl.API_INFLATION = (req, res) => {
     const month_y = String(yesterday.getMonth() + 1).padStart(2, '0')
     const day_y = String(yesterday.getDate()).padStart(2, '0') 
     
-    const API_KEY="ZkFb0ZocGPNkjKzyZdIAmmbfTYs51i5G"
-
+    res.json(API_KEY)
     const myHeaders = { apikey: API_KEY }
     
     var requestOptions = {
