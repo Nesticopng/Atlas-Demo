@@ -49,6 +49,7 @@ indexCtrl.APIPrice = (req, res) => {
         .then(response => response.json())
         .then(result => res.json("20.09"))
         .catch(error => res.json(error))
+    res.json(year_y)
 }
 
 module.exports = indexCtrl
