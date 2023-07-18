@@ -2,6 +2,14 @@ require('dotenv').config()
 
 const indexCtrl = {}
 
+const myHeaders = { apikey: API_KEY }
+
+var requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+    headers: myHeaders
+}
+
 indexCtrl.renderIndex = (req, res) =>{
     res.render("./home") 
 }
@@ -25,13 +33,8 @@ indexCtrl.renderRecharge = (req, res) => {
 indexCtrl.APIPrice = (req, res) => {
     const API_KEY = process.env.API_KEY
 
-    const myHeaders = { apikey: API_KEY }
-    
-    var requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        headers: myHeaders
-    }
+    res.json(API_KEY)
+
     
     const today = new Date()
     const year = today.getFullYear()
@@ -45,7 +48,6 @@ indexCtrl.APIPrice = (req, res) => {
     const month_y = String(yesterday.getMonth() + 1).padStart(2, '0')
     const day_y = String(yesterday.getDate()).padStart(2, '0')
 
-    res.json(year_y)
 }
 
 module.exports = indexCtrl
