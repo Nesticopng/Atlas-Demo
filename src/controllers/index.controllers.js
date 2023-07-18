@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const indexCtrl = {}
+const API_KEY = process.env.API_KEY
 
 const myHeaders = { apikey: API_KEY }
 
@@ -33,7 +34,6 @@ indexCtrl.renderRecharge = (req, res) => {
 }
 
 indexCtrl.APIPrice = (req, res) => {
-    const API_KEY = process.env.API_KEY
 
     res.json(API_KEY)
 
