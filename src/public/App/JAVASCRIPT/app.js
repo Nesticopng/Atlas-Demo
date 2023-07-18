@@ -159,7 +159,8 @@ Promise.all([fetchData, fetchPriceData , fetchHistorial ])
         const dataPromise1 = response1.json()
         const dataPromise2 = response2.json()
         const dataPromise3 = response3.json()
-
+        console.log(response2)
+        console.log(dataPromise2)
         return Promise.all([dataPromise1, dataPromise2, dataPromise3])
     })
     .then(results => {
@@ -167,7 +168,7 @@ Promise.all([fetchData, fetchPriceData , fetchHistorial ])
         const res1 = results[0]
         const res2 = results[1]
         const res3 = results[2]
-
+        console.log(res2)
         const BalanceUSD = res1[0].balance
         const DollarPrce = res2.start_rate.toFixed(2)
         const BsBalance = BalanceUSD*DollarPrce
