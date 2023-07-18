@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const { isAuthenticated } = require('../helpers/auth')
-const { renderIndex, renderLogin, renderApp, renderTransactions, renderRecharge, API_Price } = require('../controllers/index.controllers')
+const { renderIndex, renderLogin, renderApp, renderTransactions, renderRecharge, APIPrice } = require('../controllers/index.controllers')
 
 router.get('/' ,renderIndex)
 
@@ -13,7 +13,7 @@ router.get('/App/Transactions', isAuthenticated, renderTransactions)
 
 router.get('/App/Recharge', isAuthenticated, renderRecharge)
 
-router.get('/App/API-Price-Data', isAuthenticated, API_Price )
+router.get('/App/API-Price-Data', isAuthenticated, APIPrice )
 
 
 module.exports = router
