@@ -167,7 +167,7 @@ Promise.all([fetchData, fetchPriceData , fetchHistorial ])
         const res1 = results[0]
         const res2 = results[1]
         const res3 = results[2]
-        console.log(res2)
+
         const BalanceUSD = res1[0].balance
         const DollarPrce = res2.start_rate.toFixed(2)
         const BsBalance = BalanceUSD*DollarPrce
