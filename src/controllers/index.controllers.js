@@ -3,15 +3,10 @@ require('dotenv').config()
 const indexCtrl = {}
 const API_KEY = process.env.API_KEY
 
-const { Headers } = require('node-fetch')
-
-var myHeaders = new Headers()
-myHeaders.append("apikey", API_KEY)
-
 var requestOptions = {
     method: 'GET',
     redirect: 'follow',
-    headers: myHeaders
+    headers: {"apikey", API_KEY}
 }
 
 const today = new Date()
