@@ -13,7 +13,7 @@ router.get('/App/Transactions', isAuthenticated, renderTransactions)
 
 router.get('/App/Recharge', isAuthenticated, renderRecharge)
 
-router.get('/App/API-Price-Data', isAuthenticated, API_INFLATION)
+router.get('/App/API-Price-Data', isAuthenticated, API_INFLATION )
 
 
 module.exports = router
