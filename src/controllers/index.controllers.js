@@ -33,21 +33,7 @@ indexCtrl.renderRecharge = (req, res) => {
 
 indexCtrl.API_INFLATION = (req, res) => {
     const today = new Date()
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0')
-    const day = String(today.getDate()).padStart(2, '0')
-    
-    const yesterday = new Date(today)
-          yesterday.setDate(today.getDate() - 1)
-    
-    const year_y = yesterday.getFullYear()
-    const month_y = String(yesterday.getMonth() + 1).padStart(2, '0')
-    const day_y = String(yesterday.getDate()).padStart(2, '0')
-                           
-    fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
-        .then(response => response.json())
-        .then(result => res.json(result.rates.VES) )
-        .catch(error => console.log('ERROR', error))
+    res.json(today)
 }
 
 
