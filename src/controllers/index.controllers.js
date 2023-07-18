@@ -55,7 +55,7 @@ indexCtrl.APIPrice = (req, res) => {
     fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
         .then(response => response.json())
         .then(result => res.json("20.09"))
-        .catch(error => console.log('ERROR', error))
+        .catch(error => res.json(error))
 }
 
 module.exports = indexCtrl
