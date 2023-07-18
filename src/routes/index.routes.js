@@ -5,7 +5,7 @@ const { renderIndex, renderLogin, renderApp, renderTransactions, renderRecharge,
 
 router.get('/' ,renderIndex)
 
-router.get('/login', renderLogin)
+router.get('/Login', renderLogin)
 
 router.get('/App', isAuthenticated, renderApp)
 
