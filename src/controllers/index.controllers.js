@@ -35,7 +35,7 @@ indexCtrl.renderRecharge = (req, res) => {
 
 indexCtrl.APIPrice = (req, res) => {
 
-    res.json(API_KEY)
+    res.json(requestOptions)
 
     
     const today = new Date()
