@@ -3,7 +3,7 @@ const router = Router()
 const { isAuthenticated } = require('../helpers/auth')
 const { APIPrice, renderIndex, renderLogin, renderApp, APILayer, renderTransactions, renderRecharge } = require('../controllers/index.controllers')
 
-router.get('/' ,renderIndex)
+router.get('/' , renderIndex)
 
 router.get('/Login', renderLogin)
 
