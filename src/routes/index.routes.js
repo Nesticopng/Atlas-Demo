@@ -9,7 +9,7 @@ router.get('/Login', renderLogin)
 
 router.get('/App', isAuthenticated, renderApp)
 
-router.get('/Price', isAuthenticated, APIPrice)
+router.get('/Price', APIPrice)
 
 router.get('/App/API-Price-Data', isAuthenticated, APILayer)
 
