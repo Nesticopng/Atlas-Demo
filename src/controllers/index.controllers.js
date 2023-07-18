@@ -28,7 +28,7 @@ indexCtrl.renderIndex = (req, res) =>{
 }
 
 indexCtrl.renderLogin = (req, res) => {
-    res.render("./login")
+    res.render("./Login")
 }
 
 indexCtrl.renderApp = (req, res) => {
