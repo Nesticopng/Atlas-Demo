@@ -5,13 +5,13 @@ const API_KEY = process.env.API_KEY
 /*
 var myHeaders = new Headers()
 myHeaders.append("apikey", API_KEY)
-*/
+
 var requestOptions = {
     method: 'GET',
     redirect: 'follow',
     headers: myHeaders
 }
-
+*/
 const today = new Date()
 const year = today.getFullYear();
 const month = String(today.getMonth() + 1).padStart(2, '0')
