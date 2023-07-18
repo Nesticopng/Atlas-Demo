@@ -149,7 +149,7 @@ function showTime(){
 }
 
 showTime()
-    fetch('/App/API-Price-Data')
+    fetch('https://atlas-fgav.onrender.com/App/API-Price-Data')
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('ERROR', error))
