@@ -47,8 +47,8 @@ indexCtrl.API_INFLATION = (req, res) => {
     
     fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
         .then(response => response.json())
-        .then(result => res.json(result))
-        .catch(error => res.json(error))
+        .then(result => res.json(result.rates.VES))
+        .catch(error => console.log('ERROR', error))
 }
 
 
