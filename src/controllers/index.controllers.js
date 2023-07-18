@@ -10,6 +10,8 @@ var requestOptions = {
     headers: myHeaders
 }
 
+let DataJSON
+
 indexCtrl.renderIndex = (req, res) =>{
     res.render("./home") 
 }
