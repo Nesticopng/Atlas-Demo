@@ -62,7 +62,7 @@ fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_da
     .then(response => response.json())
     .then(result => console.log(result))
     .catch(error => console.log(error))
-}
+
 function ToggleTheme(){
     document.body.classList.toggle('dark')
     
