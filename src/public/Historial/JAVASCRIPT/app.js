@@ -170,7 +170,7 @@ function showDataUser(datos){
 }
 
 function ShowTransaction(transaction){
-    console.log(transaction)
+
     const date = transaction.updatedAt.slice(0, 10)
     const transType = transaction.trans_type
     let tdClass = ''
