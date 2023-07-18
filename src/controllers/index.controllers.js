@@ -2,13 +2,13 @@ require('dotenv').config()
 
 const indexCtrl = {}
 const API_KEY = process.env.API_KEY
-
+/*
 var requestOptions = {
     method: 'GET',
     redirect: 'follow',
     headers: {apikey: API_KEY}
 }
-
+*/
 const today = new Date()
 const year = today.getFullYear();
 const month = String(today.getMonth() + 1).padStart(2, '0')
