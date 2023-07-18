@@ -3,13 +3,12 @@ require('dotenv').config();
 const indexCtrl = {}
 const API_KEY = process.env.API_KEY
 
-var myHeaders = new Headers();
-myHeaders.append("apikey", API_KEY);
-
 var requestOptions = {
     method: 'GET',
-    redirect: 'follow',
-    headers: myHeaders
+    headers: new Headers({
+        'apikey': API_KEY
+    }),
+    redirect: 'follow'
 }
 
 const today = new Date()
