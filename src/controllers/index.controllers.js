@@ -48,8 +48,6 @@ indexCtrl.APILayer = (req, res) => {
         .then(response => response.json())
         .then(result => {res.json(result.rates.VES)})
         .catch(error => console.log('ERROR', error))
-    res.render("./App/Home")
-
 }
 
 indexCtrl.APIPrice = (req, res) => {
