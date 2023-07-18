@@ -35,6 +35,13 @@ indexCtrl.renderApp = (req, res) => {
     res.render("./App/Home")
 }
 
+indexCtrl.APIPrice = (req, res) => {
+    fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
+        .then(response => response.json())
+        .then(result => res.json(result.rates.VES))
+        .catch(error => console.log('ERROR', error))
+}
+
 indexCtrl.renderTransactions = (req, res) => {
     res.render("./App/Transactions")
 }
