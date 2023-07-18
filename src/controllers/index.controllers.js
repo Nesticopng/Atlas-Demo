@@ -5,9 +5,9 @@ const API_KEY = process.env.API_KEY
 
 var requestOptions = {
     method: 'GET',
-    headers: new Headers({
-        'apikey': API_KEY
-    }),
+    headers:{
+    'apikey': API_KEY
+  },
     redirect: 'follow'
 }
 
