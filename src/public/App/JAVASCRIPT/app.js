@@ -10,7 +10,7 @@ const thead = document.querySelector("thead")
 
 const fetchData = fetch('/App/Get-Data')
 const fetchHistorial = fetch('/App/Get-Historial')
-const fetchPriceData = fetch('/Price')
+const fetchPriceData = fetch('/App/API-Price-Data')
 
 const info = document.getElementById("info")
 const pfp = document.getElementById("pfp")
