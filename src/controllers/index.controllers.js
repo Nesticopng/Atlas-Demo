@@ -11,6 +11,13 @@ var requestOptions = {
     headers: myHeaders
 }   
 
+function FetchPrice(){
+        fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
+        .then(response => response.json())
+        .then(result => res.json(result.rates.VES))
+        .catch(error => console.log('ERROR', error))
+}
+
 const today = new Date()
 const year = today.getFullYear()
 const month = String(today.getMonth() + 1).padStart(2, '0')
@@ -44,10 +51,9 @@ indexCtrl.renderRecharge = (req, res) => {
 }
 
 indexCtrl.APIPrice = (req, res) => {
-    fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
-        .then(response => response.json())
-        .then(result => res.json(result.rates.VES))
-        .catch(error => console.log('ERROR', error))
+    FetchPrice()
 }
 
+
+    
 module.exports = indexCtrl
