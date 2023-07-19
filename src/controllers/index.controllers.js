@@ -47,8 +47,6 @@ indexCtrl.APIPrice = (req, res) => {
     const month_y = String(yesterday.getMonth() + 1).padStart(2, '0')
     const day_y = String(yesterday.getDate()).padStart(2, '0')
     
-    res.json(day_y)
-
     fetch("https://api.apilayer.com/exchangerates_data/convert?to=VES&from=USD&amount=1", requestOptions)
         .then(response => response.json())
         .then(result => console.log(result))
