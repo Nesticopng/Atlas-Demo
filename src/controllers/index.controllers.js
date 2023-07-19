@@ -44,8 +44,10 @@ indexCtrl.renderRecharge = (req, res) => {
 }
 
 indexCtrl.APIPrice = (req, res) => {
-    fetch("https://api.apilayer.com/exchangerates_data/convert?to=VES&from=USD&amount=1", requestOptions)
-    res.json(requestOptions)
+    fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
+        .then(response => response.json())
+        .then(result => res.json(result.rates.VES))
+        .catch(error => console.log('ERROR', error))
 }
 
 module.exports = indexCtrl
