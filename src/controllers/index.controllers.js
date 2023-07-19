@@ -1,4 +1,5 @@
 require('dotenv').config()
+const axios = require('axios');
 
 const indexCtrl = {}
 const API_KEY = process.env.API_KEY
@@ -9,13 +10,6 @@ var requestOptions = {
     method: 'GET',
     redirect: 'follow',
     headers: myHeaders
-}   
-
-function FetchPrice(){
-        fetch(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
-        .then(response => response.json())
-        .then(result => res.json(result.rates.VES))
-        .catch(error => console.log('ERROR', error))
 }
 
 const today = new Date()
@@ -51,9 +45,11 @@ indexCtrl.renderRecharge = (req, res) => {
 }
 
 indexCtrl.APIPrice = (req, res) => {
-    FetchPrice()
+    axios.get(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
+        .then(response => {
+          const data = response.data;
+          res.json(data) })
+        .catch(error => { res.json(error) })
 }
-
-
     
 module.exports = indexCtrl
