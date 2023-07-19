@@ -47,9 +47,10 @@ indexCtrl.renderRecharge = (req, res) => {
 indexCtrl.APIPrice = (req, res) => {
     axios.get(`https://api.apilayer.com/exchangerates_data/fluctuation?base=USD&start_date=${year_y}-${month_y}-${day_y}&end_date=${year}-${month}-${day}`, requestOptions)
         .then(response => {
-          const data = response.data;
+          const data = response.data.rates.VES
           res.json(data) })
         .catch(error => { res.json(error) })
 }
-    
+
+
 module.exports = indexCtrl
