@@ -9,9 +9,18 @@ var requestOptions = {
     method: 'GET',
     redirect: 'follow',
     headers: myHeaders
-}
+}   
+const today = new Date()
+const year = today.getFullYear()
+const month = String(today.getMonth() + 1).padStart(2, '0')
+const day = String(today.getDate()).padStart(2, '0')
 
-let DataJSON
+const yesterday = new Date(today)
+      yesterday.setDate(today.getDate() - 1)
+
+const year_y = yesterday.getFullYear()
+const month_y = String(yesterday.getMonth() + 1).padStart(2, '0')
+const day_y = String(yesterday.getDate()).padStart(2, '0')
 
 indexCtrl.renderIndex = (req, res) =>{
     res.render("./home") 
@@ -34,22 +43,9 @@ indexCtrl.renderRecharge = (req, res) => {
 }
 
 indexCtrl.APIPrice = (req, res) => {
-    
-    const today = new Date()
-    const year = today.getFullYear()
-    const month = String(today.getMonth() + 1).padStart(2, '0')
-    const day = String(today.getDate()).padStart(2, '0')
-    
-    const yesterday = new Date(today)
-          yesterday.setDate(today.getDate() - 1)
-    
-    const year_y = yesterday.getFullYear()
-    const month_y = String(yesterday.getMonth() + 1).padStart(2, '0')
-    const day_y = String(yesterday.getDate()).padStart(2, '0')
-    
     fetch("https://api.apilayer.com/exchangerates_data/convert?to=VES&from=USD&amount=1", requestOptions)
         .then(response => response.json())
-        .then(result => console.log(result))
+        .then(result => res.json(result))
         .catch(error => console.log('error', error));
 }
 
