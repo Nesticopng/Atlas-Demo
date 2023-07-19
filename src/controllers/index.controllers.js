@@ -51,15 +51,10 @@ indexCtrl.APIPrice = (req, res) => {
         .then(response => response.json())
         .then(result => {
             
-            let DataJSON = result.rates.VES
+            let DataJSON = result
             res.json(DataJSON)
         })
-        .catch(error => console.log('ERROR', error))
-    if(DataJSON ===''){
-        DataJSON = 'error'
-        res.json(DataJSON)
-    }
-    
+        .catch(error => res.json(error))
 }
 
 module.exports = indexCtrl
