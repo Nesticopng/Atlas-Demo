@@ -10,6 +10,7 @@ var requestOptions = {
     redirect: 'follow',
     headers: myHeaders
 }   
+
 const today = new Date()
 const year = today.getFullYear()
 const month = String(today.getMonth() + 1).padStart(2, '0')
@@ -43,7 +44,8 @@ indexCtrl.renderRecharge = (req, res) => {
 }
 
 indexCtrl.APIPrice = (req, res) => {
-res.json(requestOptions)
+    fetch("https://api.apilayer.com/exchangerates_data/convert?to=VES&from=USD&amount=1", requestOptions)
+    res.json(requestOptions)
 }
 
 module.exports = indexCtrl
