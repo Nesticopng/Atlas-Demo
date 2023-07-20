@@ -33,6 +33,10 @@ header{
     transition: all .50s ease;
 }
 
+li{
+    display: none
+}
+
 .logo{
     display: flex;
     align-items: center;
