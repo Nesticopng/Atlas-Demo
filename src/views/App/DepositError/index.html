@@ -22,14 +22,14 @@
                 <a class="active" href="/App/Transactions"><i class='bx bx-transfer-alt'></i><h3>Transacciones</h3></a>
                 <a href="/App/Recharge"><i class='bx bxl-paypal'></i><h3>Recargas</h3></a>
                 <a href="/App/Historial"><i class='bx bx-list-ul'></i><h3>Historial</h3></a>
-                <a href="/App/Profile"><i class='bx bxs-user-account'></i><h3>Perfil</h3></a>
+                <a href="#"><i class='bx bxs-user-account'></i><h3>Perfil</h3></a>
                 <a href="/Logout"><i class='bx bx-log-out'></i><h3>Cerrar Sesión</h3></a>
             </div>
         </aside>
         <main>
             <h1>Depósito</h1>
             <div class="Deposit">
-                <div class="modal">
+                <div class="modal" onload="Alert()">
                     <form class="form" action="/App/Transaction/Deposit" method="post">
                         <div class="credit-card-info--form">
                             <div class="input_container">
@@ -45,7 +45,7 @@
                                 <input class="input_field" id="amount" type="text" autocomplete="off" oninput="validarTecla(event)" name="amount" title="el Monto" maxlength="10" placeholder="0,00">
                             </div>
                         </div>
-                        <button class="purchase--btn">Transferir</button>
+                        <button onclick="Alert()" class="purchase--btn">Transferir</button>
                     </form>
                 </div>
             </div>     
