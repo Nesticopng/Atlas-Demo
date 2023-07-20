@@ -59,13 +59,16 @@ transCtrl.postQR = async (req, res) => {
     const { email, txt_desc, amount } = req.body
 
     const amountNum = parseFloat(amount)
+    console.log(email)
+    console.log(txt_desc)
+    console.log(amount)
 
     if(!email || !txt_desc || !amount || amountNum < 0.5){
         console.log("no llegan datos")
         return res.render("./App/TransactionsError")
     }
 
-    try {
+    try {   
         const dataBalanceAcc = await User.find({_id: req.user.id}).select('balance').lean()
         const balanceAcc = dataBalanceAcc[0].balance
 
