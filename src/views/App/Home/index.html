@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/App/IMÁGEN/Logo.webp">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <link rel="stylesheet" href="/App/CSS/style.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <title>Atlas | Billetera Digital 💲</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="closed">
+            <div class="head">
+                <div class="logo" id="logo">
+                </div>
+                <div class="close" id="btn-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="sidebar">
+                <a class="active" href="/App"><i class='bx bxs-dashboard'></i><h3>Inicio</h3></a>
+                <a href="/App/Transactions"><i class='bx bx-transfer-alt'></i><h3>Transacciones</h3></a>
+                <a href="/App/Recharge"><i class='bx bxl-paypal'></i><h3>Recargas</h3></a>
+                <a href="/App/Historial"><i class='bx bx-list-ul'></i><h3>Historial</h3></a>
+                <a href="/App/Profile"><i class='bx bxs-user-account'></i><h3>Perfil</h3></a>
+                <a href="/Logout"><i class='bx bx-log-out'></i><h3>Cerrar Sesión</h3></a>
+            </div>
+        </aside>
+        <main>
+            <h1>Inicio</h1>
+            <div id="date" class="clock"></div>
+            <div class="data-content">
+                <div class="balance-dolar">
+                    <i class='bx bxs-dollar-circle' ></i>
+                    <div class="mid">
+                        <div class="left">
+                            <h3>Saldo en Dólares</h3>
+                            <h1 id="balance-id"></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="balance-bs">
+                    <i class='bx bxs-credit-card' ></i>
+                    <div class="mid">
+                        <div class="left">
+                            <h3>Saldo en Bolívares</h3>
+                            <h1 id="balanceBs-id"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recent-trans">
+                <h2>Transacciones Recientes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                            <th>Remitente</th>
+                            <th>Destinatario</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions">
+
+                    </tbody>
+                </table>
+                <a href="/App/Historial">Todas las Transacciones</a>
+            </div>
+        </main>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <label class="switch-container">
+                    <input type="checkbox" id="toggleBtn" onclick="ToggleTheme()">
+                    <span class="slider"></span>
+                </label>
+                <div class="pf">
+                    <div class="info" id="info">
+                        
+                    </div>
+                    <div class="pfp" id="pfp">
+
+                    </div>
+                </div>
+            </div>
+            <div class="money">
+                <h2>Inflación</h2>
+                <div id="inflation" onload="mostrar()" class="inflation">
+                    <div id="inflation-icon" onload="mostrarInf()"></div>
+                    <div id="inflation-text"></div>
+                    <div id="inflation-sub"></div>
+                </div>
+            </div>
+            <div class="actions">
+                <h2>Acciones</h2>
+                <div onclick="QR()" class="item generate">
+                    <div class="icon">
+                        <i class='bx bx-qr'></i>
+                    </div>
+                    <div class="right">
+                        <div class="Info"></div>
+                        <h3>Generar QR</h3>
+                        <small class="text-muted">Recibir Depósito</small>
+                    </div>
+                </div>
+                <div onclick="startQRReader()" class="item scan">
+                    <div class="icon">
+                        <i class='bx bx-qr-scan'></i>
+                    </div>
+                    <div class="right">
+                        <div class="Info"></div>
+                        <h3>Escanear QR</h3>
+                        <small class="text-muted">Enviar Depósito</small>
+                    </div>
+                </div>
+                <a href="/App/Transaction/Deposit" class="item transaction">
+                    <div class="icon">
+                        <i class='bx bx-transfer-alt'></i>
+                    </div>
+                    <div class="right">
+                        <div class="Info"></div>
+                        <h3>Transferir</h3>
+                        <small class="text-muted">Enviar Depósito</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="/App/JAVASCRIPT/app.js"></script>
+</body>
+</html>
