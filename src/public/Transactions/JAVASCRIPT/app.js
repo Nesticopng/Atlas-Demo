@@ -222,8 +222,8 @@ function genQRContainer(){
         if(document.body.classList.contains('dark')){
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: QRData,
-                width: 256,
-                height: 256,
+                width: 250,
+                height: 250,
                 colorDark : "#0c0e0f",
                 colorLight : "#ffffff",
                 correctLevel : QRCode.CorrectLevel.H
@@ -231,8 +231,8 @@ function genQRContainer(){
         }else{
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: QRData,
-                width: 256,
-                height: 256,
+                width: 250,
+                height: 250,
                 colorDark : "#000000",
                 colorLight : "#ffffff",
                 correctLevel : QRCode.CorrectLevel.H
@@ -291,9 +291,9 @@ function startQRReader(){
         }
     }
 
-    const config = { fps: 60, qrbox: { width: 260, height: 260 }, aspectRatio: 1.777778 }
+    const config = { fps: 30, qrbox: { width: 260, height: 260 }, aspectRatio: 1.777778 }
     
-    html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
+    html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback)
     .catch(error => {
         goBackQR()
         const msg = 'No se pudo acceder a la cámara'
