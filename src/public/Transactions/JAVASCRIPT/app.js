@@ -291,7 +291,7 @@ function startQRReader(){
         }
     }
 
-    const config = { fps: 30, qrbox: { width: 260, height: 260 }, aspectRatio: 1.777778 }
+    const config = { fps: 60, qrbox: { width: 260, height: 260 }, aspectRatio: 1.777778 }
     
     html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
     .catch(error => {
