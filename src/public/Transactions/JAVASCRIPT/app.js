@@ -293,7 +293,7 @@ function startQRReader(){
 
     const config = { fps: 30, qrbox: { width: 260, height: 260 }, aspectRatio: 1.777778 }
     
-    html5QrCode.start({ facingMode: "user" }, config, qrCodeSuccessCallback)
+    html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
     .catch(error => {
         goBackQR()
         const msg = 'No se pudo acceder a la cámara'
