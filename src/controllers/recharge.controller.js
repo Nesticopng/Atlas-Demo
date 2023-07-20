@@ -17,8 +17,8 @@ rechargeCtrl.createOrder_5 = async (req, res) => {
             application_context: {
                 brand_name: "Atlas",
                 user_action:"PAY_NOW",
-                return_url: "http://localhost:4000/App/Recharge/Capture-5",
-                cancel_url: "http://localhost:4000/App/Recharge/Cancel"
+                return_url: "https://atlas-fgav.onrender.com/App/Recharge/Capture-5",
+                cancel_url: "https://atlas-fgav.onrender.com/App/Recharge/Cancel"
             },
             experience_context: {
                 landing_page: "NO_PREFERENCE"
@@ -96,8 +96,8 @@ rechargeCtrl.createOrder_10 = async (req, res) => {
             application_context: {
                 brand_name: "Atlas",
                 user_action:"PAY_NOW",
-                return_url: "http://localhost:4000/App/Recharge/Capture-10",
-                cancel_url: "http://localhost:4000/App/Recharge/Cancel"
+                return_url: "https://atlas-fgav.onrender.com/App/Recharge/Capture-10",
+                cancel_url: "https://atlas-fgav.onrender.com/App/Recharge/Cancel"
             },
             experience_context: {
                 landing_page: "NO_PREFERENCE"
@@ -175,8 +175,8 @@ rechargeCtrl.createOrder_20 = async (req, res) => {
             application_context: {
                 brand_name: "Atlas",
                 user_action:"PAY_NOW",
-                return_url: "http://localhost:4000/App/Recharge/Capture-20",
-                cancel_url: "http://localhost:4000/App/Recharge/Cancel"
+                return_url: "https://atlas-fgav.onrender.com/App/Recharge/Capture-20",
+                cancel_url: "https://atlas-fgav.onrender.com/App/Recharge/Cancel"
             },
             experience_context: {
                 landing_page: "NO_PREFERENCE"
@@ -254,8 +254,8 @@ rechargeCtrl.createOrder_50 = async (req, res) => {
             application_context: {
                 brand_name: "Atlas",
                 user_action:"PAY_NOW",
-                return_url: "http://localhost:4000/App/Recharge/Capture-50",
-                cancel_url: "http://localhost:4000/App/Recharge/Cancel"
+                return_url: "https://atlas-fgav.onrender.com/App/Recharge/Capture-50",
+                cancel_url: "https://atlas-fgav.onrender.com/App/Recharge/Cancel"
             },
             experience_context: {
                 landing_page: "NO_PREFERENCE"
@@ -333,8 +333,8 @@ rechargeCtrl.createOrder_100 = async (req, res) => {
             application_context: {
                 brand_name: "Atlas",
                 user_action:"PAY_NOW",
-                return_url: "http://localhost:4000/App/Recharge/Capture-100",
-                cancel_url: "http://localhost:4000/App/Recharge/Cancel"
+                return_url: "https://atlas-fgav.onrender.com/App/Recharge/Capture-100",
+                cancel_url: "https://atlas-fgav.onrender.com/App/Recharge/Cancel"
             },
             experience_context: {
                 landing_page: "NO_PREFERENCE"
