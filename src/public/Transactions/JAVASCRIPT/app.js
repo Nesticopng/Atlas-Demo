@@ -348,7 +348,7 @@ function PayQR(dataReObj){
 
     if(dataReObj.amount){
         QR_Form.innerHTML = 
-        `<form class="form" id="Pay" onsubmit="val(event)" action="/App/Transaction/QR-Deposit" method="post">
+        `<form class="form" id="Pay" onsubmit="val(event)" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="post">
             <div class="credit-card-info--form" method="POST">
                 <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}">
                 <input id="amount" type="hidden" name="amount" value="${dataReObj.amount}">
@@ -371,7 +371,7 @@ function PayQR(dataReObj){
 
     }else if(!dataReObj.amount){
         QR_Form.innerHTML = 
-        `<form class="form" id="Pay" onsubmit="val(event)" action="/App/Transaction/QR-Deposit" method="post">
+        `<form class="form" id="Pay" onsubmit="val(event)" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="post">
             <div class="credit-card-info--form">
                 <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}">
                 <input id="email" type="hidden" name="email" value="${dataReObj.email}">
