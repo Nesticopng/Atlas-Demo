@@ -85,7 +85,7 @@ AccountCtrl.SingUpReg = async (req, res) => {
     var numero = key_public.encrypt(Newnumero, 'base64')
     var cdi = key_public.encrypt(Newcdi, 'base64')
 
-    const balance = 200
+    const balance = 20
     const newUser = new User({ name, email, numero, cdi, password, balance})
     newUser.password = await newUser.encryptPassword(password)
     
