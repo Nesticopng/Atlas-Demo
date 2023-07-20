@@ -527,9 +527,9 @@ function PayQR(dataReObj){
 
     if(dataReObj.amount){
         QR_Form.innerHTML = 
-        `<form class="form" id="Pay" onsubmit="val(event)" action="/App/Transaction/QR-Deposit" method="post">
-            <div class="credit-card-info--form" method="POST">
-                <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}">
+        `<form class="form" id="Pay" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="POST">
+            <div class="credit-card-info--form" >
+                <input id="txt_desc" type="hidden" name="txt_desc" value="">
                 <input id="amount" type="hidden" name="amount" value="${dataReObj.amount}">
                 <input id="email" type="hidden" name="email" value="${dataReObj.email}">
                 <h2 class="txt-info">¿Estás seguro de querer pagar <span style="color: rgb(16, 204, 116);">${dataReObj.amount.toLocaleString()}$</span><br>a <span style="color: #3C60FC;">${dataReObj.email}</span>?</h2>
@@ -543,16 +543,16 @@ function PayQR(dataReObj){
     
         popupOverlay.appendChild(popup)
         document.body.appendChild(popupOverlay)
-        
+      
         setTimeout(function() {
             popupOverlay.classList.add('fade-in')
         }, 10)
 
     }else if(!dataReObj.amount){
         QR_Form.innerHTML = 
-        `<form class="form" id="Pay" onsubmit="val(event)" action="/App/Transaction/QR-Deposit" method="post">
+        `<form class="form" id="Pay" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="post">
             <div class="credit-card-info--form">
-                <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}">
+                <input id="txt_desc" type="hidden" name="txt_desc" value=" ">
                 <input id="email" type="hidden" name="email" value="${dataReObj.email}">
                 <h2 class="txt-info">Ingrese el monto que va a depositar<br>a <span style="color: #3C60FC;">${dataReObj.email}</span>?</h2>
                 <div class="input_container">
@@ -569,7 +569,7 @@ function PayQR(dataReObj){
     
         popupOverlay.appendChild(popup)
         document.body.appendChild(popupOverlay)
-        
+      
         setTimeout(function() {
             popupOverlay.classList.add('fade-in')
         }, 10)
