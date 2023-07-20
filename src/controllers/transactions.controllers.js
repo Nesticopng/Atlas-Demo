@@ -61,6 +61,7 @@ transCtrl.postQR = async (req, res) => {
     const amountNum = parseFloat(amount)
 
     if(!email || !txt_desc || !amount || amountNum < 0.5){
+        console.log("no llegan datos")
         return res.render("./App/TransactionsError")
     }
 
@@ -69,12 +70,14 @@ transCtrl.postQR = async (req, res) => {
         const balanceAcc = dataBalanceAcc[0].balance
 
         if(amount > balanceAcc){
+            console.log("Saldo")
             return res.render("./App/TransactionsError")
         }
 
         const addresseAcc = await User.findOne({ email })
 
         if (!addresseAcc) {
+            console.log("No existe destinatario")
             return res.render("./App/TransactionsUserError")
         }
 
@@ -99,6 +102,8 @@ transCtrl.postQR = async (req, res) => {
         res.redirect("/App")
         
         } catch (error) {
+                    console.log("Catch", error)
+
             return res.render("./App/TransactionsUserError")
         }
 }
