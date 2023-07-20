@@ -96,6 +96,7 @@ fetch('/App/Get-Data')
         balance = data.balance
         email = data.email
     })
+
     .catch(error => error)
     
 document.querySelector("form").addEventListener("submit",function(event){
@@ -105,7 +106,6 @@ document.querySelector("form").addEventListener("submit",function(event){
     var amountInput = document.getElementById("amount").value
 
     if(validarCorreo(emailInput) && emailInput != email && amountInput > 0.5 && amountInput < balance){
-        localStorage.setItem('Alert', 'La transaccion ha sido completada')
         event.target.submit()
     }else if(!validarCorreo(emailInput)){
         const err = 'Por favor ingrese un correo valido'
@@ -235,3 +235,7 @@ document.addEventListener('keyup', function(event) {
         closePopup();
     }
 })
+
+function Alert(){ 
+    localStorage.setItem('Alert', 'La transaccion ha sido completada')
+}
