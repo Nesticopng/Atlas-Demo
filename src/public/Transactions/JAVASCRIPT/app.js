@@ -320,44 +320,6 @@ function ReadedQR(result){
     }
 }
 
-function val(event){
-    event.preventDefault()
-
-    var emailInput = document.getElementById("email").value
-    var amountInput = document.getElementById("amount").value
-
-    if(validarCorreo(emailInput) && emailInput != email && amountInput < balance){
-        localStorage.setItem('Alert', 'La transaccion ha sido completada')
-            var datos = {
-            name: nameInput,
-            email: correoInput,
-            Newnumero: numeroInput,
-            Newcdi: cdiInput,
-            password: passwordInput,
-            confirm_password: confirmPasswordInput
-        }
-
-        fetch("/SingUpReg", {
-            method: 'POST',
-            body: JSON.stringify(datos),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        event.target.submit()
-        
-    }else if(emailInput === email){
-        const err = `No puedes transferirte a ti mismo`
-        ErrorMSG(err)
-    }else if(amountInput > balance){
-        const err = `El monto es mayor a su saldo <br> por favor recargue` 
-        ErrorMSG(err)
-    }else if(!validarCorreo(emailInput)){
-        const err = 'El correo no es válido'
-        ErrorMSG(err)
-    }
-}
-
 function PayQR(dataReObj){
     const popupOverlay = document.createElement('div')
     popupOverlay.className = 'popup-overlay'
