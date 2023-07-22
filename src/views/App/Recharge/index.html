@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/App/IMÁGEN/Logo.webp">
+    <link rel="stylesheet" href="/Recharge/CSS/style.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <title>Atlas | Billetera Digital 💲</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="closed">
+            <div class="head">
+                <div class="logo" id="logo">
+                </div>
+                <div class="close" id="btn-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="sidebar">
+                <a href="/App"><i class='bx bxs-dashboard'></i><h3>Inicio</h3></a>
+                <a href="/App/Transactions"><i class='bx bx-transfer-alt'></i><h3>Transacciones</h3></a>
+                <a class="active" href="/App/Recharge"><i class='bx bxl-paypal'></i><h3>Recargas</h3></a>
+                <a href="/App/Historial"><i class='bx bx-list-ul'></i><h3>Historial</h3></a>
+                <a href="/App/Profile"><i class='bx bxs-user-account'></i><h3>Perfil</h3></a>
+                <a href="/Logout"><i class='bx bx-log-out'></i><h3>Cerrar Sesión</h3></a>
+            </div>
+        </aside>
+        <main>
+            <div class="Recharge">
+                <h1>Recargas</h1>
+                <div class="data-content">
+                    <a class="Pay-content" href="/App/Recharge-5">
+                        <h1>Recarga 5$ con</h1>
+                        <img src="/Recharge/IMÁGEN/PayPal.svg">
+                    </a>
+                    <a class="Pay-content" href="/App/Recharge-10">
+                        <h1>Recarga 10$ con</h1>
+                        <img src="/Recharge/IMÁGEN/PayPal.svg">
+                    </a>
+                    <a class="Pay-content" href="/App/Recharge-20">
+                        <h1>Recarga 20$ con</h1>
+                        <img src="/Recharge/IMÁGEN/PayPal.svg">
+                    </a>
+                    <a class="Pay-content" href="/App/Recharge-50">
+                        <h1>Recarga 50$ con</h1>
+                        <img src="/Recharge/IMÁGEN/PayPal.svg">
+                    </a>
+                    <a class="Pay-content Final" href="/App/Recharge-100">
+                        <h1>Recarga 100$ con</h1>
+                        <img src="/Recharge/IMÁGEN/PayPal.svg">
+                    </a>
+                </div>
+            </div>
+        </main>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <label class="switch-container">
+                    <input type="checkbox" id="toggleBtn" onclick="ToggleTheme()">
+                    <span class="slider"></span>
+                </label>
+                <div class="pf">
+                    <div class="info" id="info">
+                        
+                    </div>
+                    <div class="pfp" id="pfp">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Recharge/JAVASCRIPT/app.js"></script>
+</body>
+</html>

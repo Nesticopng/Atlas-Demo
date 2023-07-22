@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/App/IMÁGEN/Logo.webp">
+    <link rel="stylesheet" href="/Historial/CSS/style.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <title>Atlas | Billetera Digital 💲</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="closed">
+            <div class="head">
+                <div class="logo" id="logo">
+                </div>
+                <div class="close" id="btn-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="sidebar">
+                <a href="/App"><i class='bx bxs-dashboard'></i><h3>Inicio</h3></a>
+                <a href="/App/Transactions"><i class='bx bx-transfer-alt'></i><h3>Transacciones</h3></a>
+                <a href="/App/Recharge"><i class='bx bxl-paypal'></i><h3>Recargas</h3></a>
+                <a class="active" href="/App/Historial"><i class='bx bx-list-ul'></i><h3>Historial</h3></a>
+                <a href="/App/Profile"><i class='bx bxs-user-account'></i><h3>Perfil</h3></a>
+                <a href="/Logout"><i class='bx bx-log-out'></i><h3>Cerrar Sesión</h3></a>
+            </div>
+        </aside>
+        <main>
+            <div class="recent-trans">
+                <h2>Historial de Transacciones</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                            <th>Remitente</th>
+                            <th>Destinatario</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions">
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <label class="switch-container">
+                    <input type="checkbox" id="toggleBtn" onclick="ToggleTheme()">
+                    <span class="slider"></span>
+                </label>
+                <div class="pf">
+                    <div class="info" id="info">
+                        
+                    </div>
+                    <div class="pfp" id="pfp">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/Historial/JAVASCRIPT/app.js"></script>
+</body>
+</html>
