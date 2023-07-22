@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/App/IMÁGEN/Logo.webp">
+    <link rel="stylesheet" href="/Transactions/CSS/style.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <title>Atlas | Billetera Digital 💲</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="closed">
+            <div class="head">
+                <div class="logo" id="logo">
+                </div>
+                <div class="close" id="btn-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="sidebar">
+                <a href="/App"><i class='bx bxs-dashboard'></i><h3>Inicio</h3></a>
+                <a class="active" href="/App/Transactions"><i class='bx bx-transfer-alt'></i><h3>Transacciones</h3></a>
+                <a href="/App/Recharge"><i class='bx bxl-paypal'></i><h3>Recargas</h3></a>
+                <a href="/App/Historial"><i class='bx bx-list-ul'></i><h3>Historial</h3></a>
+                <a href="/App/Profile"><i class='bx bxs-user-account'></i><h3>Perfil</h3></a>
+                <a href="/Logout"><i class='bx bx-log-out'></i><h3>Cerrar Sesión</h3></a>
+            </div>
+        </aside>
+        <main>
+            <h1>Depósito</h1>
+            <div class="Deposit">
+                <div class="modal" onload="Alert()">
+                    <form class="form" action="/App/Transaction/Deposit" method="post">
+                        <div class="credit-card-info--form">
+                            <div class="input_container">
+                                <label class="input_label">Email</label>
+                                <input class="input_field" type="text" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="input_container">
+                                <label class="input_label">Nombre de la Transacción (Opcional)</label>
+                                <input class="input_field" type="text" autocomplete="off" name="txt_desc" title="txt_desc" placeholder="Nombre">
+                            </div>
+                            <div class="input_container">
+                                <label class="input_label">Monto</label>
+                                <input class="input_field" id="amount" type="text" autocomplete="off" pattern="[0-9]+(\.[0-9]{2})?(?!\.)" name="amount" title="el Monto" maxlength="5" placeholder="0.00" required>
+                            </div>
+                        </div>
+                        <button class="purchase--btn">Transferir</button>
+                    </form>
+                </div>
+            </div>     
+        </main>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <label class="switch-container">
+                    <input type="checkbox" id="toggleBtn" onclick="ToggleTheme()">
+                    <span class="slider"></span>
+                </label>
+                <div class="pf">
+                    <div class="info" id="info">
+                        
+                    </div>
+                    <div class="pfp" id="pfp">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Transactions/JAVASCRIPT/deposit.js"></script>
+    <script>
+        const popupOverlay = document.createElement('div')
+        popupOverlay.className = 'popup-overlay'
+      
+        const popup = document.createElement('div')
+        popup.className = 'popup'
+      
+        const closeButton = document.createElement('button')
+        closeButton.className = 'button-close'
+        closeButton.innerHTML = "<i class='bx bx-x'></i>"
+        closeButton.addEventListener('click', closePopup)
+      
+        const iconContainer = document.createElement('div')
+        iconContainer.className = 'icon-alert'
+        iconContainer.innerHTML = `<i class='bx bxs-error'></i>`
+      
+        const message = document.createElement('h4')
+        message.className = 'message'
+        message.innerHTML = `No se puede transferir<br>a tu misma cuenta`
+      
+        popup.appendChild(closeButton)
+        popup.appendChild(iconContainer)
+        popup.appendChild(message)
+        popupOverlay.appendChild(popup)
+        document.body.appendChild(popupOverlay)
+      
+        setTimeout(function() {
+            popupOverlay.classList.add('fade-in')
+        }, 10)
+        localStorage.removeItem('Alert')
+    
+        function closePopup() {
+          const popupOverlay = document.querySelector('.popup-overlay')
+          const popup = document.querySelector('.popup')
+        
+          popupOverlay.classList.remove('fade-in')
+          popupOverlay.classList.add('fade-out')
+          popup.classList.remove('fade-in')
+          popup.classList.add('fade-out')
+        
+          setTimeout(function() {
+              popupOverlay.remove()
+          }, 300);
+        }
+    
+    function closePopup() {
+      const popupOverlay = document.querySelector('.popup-overlay')
+      const popup = document.querySelector('.popup')
+    
+      popupOverlay.classList.remove('fade-in')
+      popupOverlay.classList.add('fade-out')
+      popup.classList.remove('fade-in')
+      popup.classList.add('fade-out')
+    
+      setTimeout(function() {
+          popupOverlay.remove()
+      }, 300);
+    }
+    localStorage.removeItem('Alert')
+</script>
+</body>
+</html>
