@@ -555,7 +555,7 @@ function PayQR(dataReObj){
                 <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}"">
                 <input id="amount" type="hidden" name="amount" value="${dataReObj.amount}">
                 <input id="email" type="hidden" name="email" value="${dataReObj.email}">
-                <h2 class="txt-info">¿Estás seguro de querer pagar <span style="color: rgb(16, 204, 116);">${dataReObj.amount.toLocaleString()}$</span><br>a <span style="color: #3C60FC;">${dataReObj.email}</span> por <span style="color: rgb(16, 204, 116);">${dataReObj.txt_desc}</span>?</h2>
+                <h2 class="txt-info">¿Estás seguro de querer pagar <span style="color: rgb(16, 204, 116);">${dataReObj.amount.toLocaleString()}$</span><br>a <span style="color: #3C60FC;">${dataReObj.email}</span><br>por <span style="color: rgb(16, 204, 116);">${dataReObj.txt_desc}</span>?</h2>
             </div>
             <button class="purchase--btn G-QR">Pagar</button>
         </form>`
