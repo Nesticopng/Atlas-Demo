@@ -548,14 +548,14 @@ function PayQR(dataReObj){
             popupOverlay.classList.add('fade-in')
         }, 10)
 
-    }else if(dataReObj.amount){
+    }else if(dataReObj.txt_desc && dataReObj.amount){
         QR_Form.innerHTML = 
         `<form class="form" id="Pay" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="POST">
             <div class="credit-card-info--form" >
                 <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}"">
                 <input id="amount" type="hidden" name="amount" value="${dataReObj.amount}">
                 <input id="email" type="hidden" name="email" value="${dataReObj.email}">
-                <h2 class="txt-info">¿Estás seguro de querer pagar <span style="color: rgb(16, 204, 116);">${dataReObj.amount.toLocaleString()}$</span><br>a <span style="color: #3C60FC;">${dataReObj.email}</span><br>por <span style="color: rgb(16, 204, 116);">${dataReObj.txt_desc}</span>?</h2>
+                <h2 class="txt-info">¿Estás seguro de querer pagar <span style="color: rgb(16, 204, 116);">${dataReObj.amount.toLocaleString()}$</span><br>a <span style="color: #3C60FC;">${dataReObj.email}</span><br>por <span style="color: #3C60FC;">${dataReObj.txt_desc}</span>?</h2>
             </div>
             <button class="purchase--btn G-QR">Pagar</button>
         </form>`
@@ -571,13 +571,39 @@ function PayQR(dataReObj){
             popupOverlay.classList.add('fade-in')
         }, 10)
 
-    }else if(!dataReObj.amount){
+    }else if(!dataReObj.txt_desc && !dataReObj.amount){
         QR_Form.innerHTML = 
         `<form class="form" id="Pay" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="post">
             <div class="credit-card-info--form">
-                <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.amount}">
+                <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}">
                 <input id="email" type="hidden" name="email" value="${dataReObj.email}">
+                
                 <h2 class="txt-info">Ingrese el monto que va a depositar<br>a <span style="color: #3C60FC;">${dataReObj.email}</span>?</h2>
+                <div class="input_container">
+                    <label class="input_label">Monto</label>
+                    <input class="input_field" id="amount" type="text" autocomplete="off" oninput="validarTecla(event)" name="amount" title="el Monto" maxlength="10" placeholder="0,00">
+                </div>
+            </div>
+            <button class="purchase--btn G-QR">Pagar</button>
+        </form>`
+
+        popup.appendChild(closeButton)
+        popup.appendChild(message)
+        popup.appendChild(QR_Form)
+    
+        popupOverlay.appendChild(popup)
+        document.body.appendChild(popupOverlay)
+      
+        setTimeout(function() {
+            popupOverlay.classList.add('fade-in')
+        }, 10)
+    }else if(dataReObj.txt_desc && !dataReObj.amount){
+        QR_Form.innerHTML = 
+        `<form class="form" id="Pay" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="post">
+            <div class="credit-card-info--form">
+                <input id="txt_desc" type="hidden" name="txt_desc" value="${dataReObj.txt_desc}">
+                <input id="email" type="hidden" name="email" value="${dataReObj.email}">
+                <h2 class="txt-info">Ingrese el monto que va a depositar<br>a <span style="color: #3C60FC;">${dataReObj.email}</span> <br> por <span style="color: #3C60FC;">${dataReObj.txt_desc}</span>?</h2>
                 <div class="input_container">
                     <label class="input_label">Monto</label>
                     <input class="input_field" id="amount" type="text" autocomplete="off" oninput="validarTecla(event)" name="amount" title="el Monto" maxlength="10" placeholder="0,00">
