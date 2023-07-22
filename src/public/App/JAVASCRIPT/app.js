@@ -168,8 +168,6 @@ Promise.all([ fetchData, fetchPriceData, fetchHistorial ])
         const res2 = results[1]
         const res3 = results[2]
 
-        console.log(res2)
-
         const BalanceUSD = res1[0].balance
         const DollarPrce = res2.start_rate.toFixed(2)
         const BsBalance = BalanceUSD*DollarPrce
@@ -527,7 +525,30 @@ function PayQR(dataReObj){
     QR_Form.className = 'QR-Form'
     QR_Form.id = "QR_Form"
 
-    if(dataReObj.amount){
+    if(!dataReObj.txt_desc && dataReObj.amount){
+        QR_Form.innerHTML = 
+        `<form class="form" id="Pay" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="POST">
+            <div class="credit-card-info--form" >
+                <input id="txt_desc" type="hidden" name="txt_desc" value="">
+                <input id="amount" type="hidden" name="amount" value="${dataReObj.amount}">
+                <input id="email" type="hidden" name="email" value="${dataReObj.email}">
+                <h2 class="txt-info">¿Estás seguro de querer pagar <span style="color: rgb(16, 204, 116);">${dataReObj.amount.toLocaleString()}$</span><br>a <span style="color: #3C60FC;">${dataReObj.email}</span>?</h2>
+            </div>
+            <button class="purchase--btn G-QR">Pagar</button>
+        </form>`
+
+        popup.appendChild(closeButton)
+        popup.appendChild(message)
+        popup.appendChild(QR_Form)
+    
+        popupOverlay.appendChild(popup)
+        document.body.appendChild(popupOverlay)
+      
+        setTimeout(function() {
+            popupOverlay.classList.add('fade-in')
+        }, 10)
+
+    }else if(dataReObj.amount){
         QR_Form.innerHTML = 
         `<form class="form" id="Pay" action="https://atlas-fgav.onrender.com/App/Transaction/QR-Deposit" method="POST">
             <div class="credit-card-info--form" >
