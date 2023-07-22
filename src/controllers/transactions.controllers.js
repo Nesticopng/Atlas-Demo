@@ -63,7 +63,7 @@ transCtrl.postQR = async (req, res) => {
     console.log(txt_desc)
     console.log(amount)
 
-    if(!email || !txt_desc || !amount || amountNum < 0.5){
+    if(!email || !amount || amountNum < 0.5){
         console.log("no llegan datos")
         return res.render("./App/TransactionsError")
     }
