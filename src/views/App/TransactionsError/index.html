@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/App/IMÁGEN/Logo.webp">
+    <link rel="stylesheet" href="/Transactions/CSS/styleI.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <title>Atlas | Billetera Digital 💲</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="closed">
+            <div class="head">
+                <div class="logo" id="logo">
+                </div>
+                <div class="close" id="btn-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="sidebar">
+                <a href="/App"><i class='bx bxs-dashboard'></i><h3>Inicio</h3></a>
+                <a class="active" href="/App/Transactions"><i class='bx bx-transfer-alt'></i><h3>Transacciones</h3></a>
+                <a href="/App/Recharge"><i class='bx bxl-paypal'></i><h3>Recargas</h3></a>
+                <a href="/App/Historial"><i class='bx bx-list-ul'></i><h3>Historial</h3></a>
+                <a href="/App/Profile"><i class='bx bxs-user-account'></i><h3>Perfil</h3></a>
+                <a href="/Logout"><i class='bx bx-log-out'></i><h3>Cerrar Sesión</h3></a>
+            </div>
+        </aside>
+        <main>
+            <h1>Transacciones</h1>
+            <div class="Functions">
+                <a class="deposit" href="/App/Transaction/Deposit">
+                    <i class='bx bx-transfer-alt'></i>
+                    <div class="mid">
+                        <h2>Depósito</h1>
+                    </div>
+                </a>
+                <a class="qr" onclick="QR()">
+                    <i class='bx bx-qr'></i>
+                    <div class="mid">
+                        <h2>Generar QR</h1>
+                    </div>
+                </a>
+                <a class="scan" onclick="startQRReader()">
+                    <i class='bx bx-qr-scan'></i>
+                    <div class="mid">
+                        <h2>Escanear QR</h1>
+                    </div>
+                </a>
+            </div>
+        </main>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <label class="switch-container">
+                    <input type="checkbox" id="toggleBtn" onclick="ToggleTheme()">
+                    <span class="slider"></span>
+                </label>
+                <div class="pf">
+                    <div class="info" id="info">
+                        
+                    </div>
+                    <div class="pfp" id="pfp">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="/Transactions/JAVASCRIPT/app.js"></script>
+    <script>
+        localStorage.removeItem('Alert')
+        const err = 'Hubo un error al hacer la transacción'
+        ErrorMSG(err)
+    </script>
+</body>
+</html>
